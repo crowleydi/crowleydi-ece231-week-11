@@ -25,6 +25,8 @@ int main()
 	// Write more tests to fully test your classes.
 	Set<int> s;
 	s.insert(5);
+	s.insert(4);
+	s.insert(7);
 
 	Assert(s.contains(5), "set contains 5");
 	Assert(!s.contains(6), "set does not contain 6");
