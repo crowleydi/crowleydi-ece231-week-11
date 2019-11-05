@@ -25,10 +25,10 @@ std::set class when loading the `numbers` file, and searching for all values in 
         ...
         
         btnode(const K& key);
-        btnode(const K&, const V& value);
+        btnode(const K& key, const V& value);
      };
      ```
-  1. Implement operator[] for Map.
+  1. Implement `operator[]` for Map.
      ```
      V& operator[](const K& key); // no const version
      ```
@@ -36,7 +36,8 @@ std::set class when loading the `numbers` file, and searching for all values in 
      ```
      void insert(const K& key, const V& value);
      ```
-  1. Implement at() for Map. If the key cannot be found, throw an error.
+  1. Implement `at()` for Map. If the key cannot be found, throw a
+     `std::out_of_range` exception.
      ```
      V& at(const K& key);
      const V& at(const K& key) const;
@@ -51,12 +52,13 @@ Use `Timer.h` to make the following measurements:
   1. Time to load `numbers` into Set.
   1. Time to lookup all values in `search` file using std::set.
   1. Time to lookup all values in `search` file using Set.
-  
+
+Run each test with sorted `numbers` and with unsorted `numbers`.
 Write your code so the `numbers` file is read from `std::cin` like this:
    ```
    Set<int> s;
    int val;
-   while (std::cin >> val) s.insert(v);
+   while (std::cin >> val) s.insert(val);
    ```
    To read the unsorted `numbers` file run the command `cat numbers | ./runtests`.
    To read the`numbers` file sorted, run the command `sort -n numbers | ./runtests`.
