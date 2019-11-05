@@ -60,10 +60,11 @@ Write your code so the `numbers` file is read from `std::cin` like this:
    int val;
    while (std::cin >> val) s.insert(val);
    ```
-   To read the unsorted `numbers` file run the command `cat numbers | ./runtests`.
-   To read the`numbers` file sorted, run the command `sort -n numbers | ./runtests`.
+   Run this command to create an unsorted list `sort -R numbers > unsorted`.
+   To read the unsorted `numbers` file run the command `cat unsorted | ./runtests`.
+   To read the`numbers` file sorted, run the command `cat numbers | ./runtests`.
    
-   ## Coverage report
+## Coverage report
 
 Install lcov with the command `sudo apt install lcov`
 
